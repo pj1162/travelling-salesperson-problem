@@ -17,74 +17,76 @@
         </div>
     </nav>
     <!-- // Navbar -->
-    <div class="container">
-        <p class="flow-text">Denna applikation löser handelsresandes problemet för fyra platser. Ange platsernas namn och koordinater (enligt WGS84 systemet) i formuläret. Flygsträckorna mellan platserna räknas ut och används för att hitta en lösning.</p>
-        <!-- Form -->
-        <form action="calculate.php" method="POST">
-            <div class="row">
-                <h2>Start</h2>
-                <div class="input-field col s12 m4">
-                    <input type="text" name="city1" id="city1" required>
-                    <label for="city1">Start:</label>
+    <main>
+        <div class="container">
+            <p class="flow-text">Denna applikation löser handelsresandes problemet för fyra platser. Ange platsernas namn och koordinater (enligt WGS84 systemet) i formuläret. Flygsträckorna mellan platserna räknas ut och används för att hitta en lösning.</p>
+            <!-- Form -->
+            <form action="calculate.php" method="POST">
+                <div class="row">
+                    <h2>Start</h2>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="city1" id="city1" required>
+                        <label for="city1">Start:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="latitude1" id="latitude1" step="0.000001" min="-90" max="90" required>
+                        <label for="latitude1">Latitud:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="longitude1" id="longitude1" step="0.000001" min="-180" max="180" required>
+                        <label for="longitude1">Longitud:</label>
+                    </div>
                 </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="latitude1" id="latitude1" step="0.000001" min="-90" max="90" required>
-                    <label for="latitude1">Latitud:</label>
+                <div class="row">
+                    <h2>Plats a</h2>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="city2" id="city2" required>
+                        <label for="city2">Plats:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="latitude2" id="latitude2" step="0.000001" min="-90" max="90" required>
+                        <label for="latitude2">Latitud:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="longitude2" id="longitude2" step="0.000001" min="-180" max="180" required>
+                        <label for="longitude2">Longitud:</label>
+                    </div>
                 </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="longitude1" id="longitude1" step="0.000001" min="-180" max="180" required>
-                    <label for="longitude1">Longitud:</label>
+                <div class="row">
+                    <h2>Plats b</h2>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="city3" id="city3" required>
+                        <label for="city3">Plats:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="latitude3" id="latitude3" step="0.000001" min="-90" max="90" required>
+                        <label for="latitude3">Latitud:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="longitude3" id="longitude3" step="0.000001" min="-180" max="180" required>
+                        <label for="longitude3">Longitud:</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <h2>Plats a</h2>
-                <div class="input-field col s12 m4">
-                    <input type="text" name="city2" id="city2" required>
-                    <label for="city2">Plats:</label>
+                <div class="row">
+                    <h2>Plats c</h2>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="city4" id="city4" required>
+                        <label for="city4">Plats:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="latitude4" id="latitude4" step="0.000001" min="-90" max="90" required>
+                        <label for="latitude4">Latitud:</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="number" name="longitude4" id="longitude4" step="0.000001" min="-180" max="180" required>
+                        <label for="longitude4">Longitud:</label>
+                    </div>
                 </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="latitude2" id="latitude2" step="0.000001" min="-90" max="90" required>
-                    <label for="latitude2">Latitud:</label>
-                </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="longitude2" id="longitude2" step="0.000001" min="-180" max="180" required>
-                    <label for="longitude2">Longitud:</label>
-                </div>
-            </div>
-            <div class="row">
-                <h2>Plats b</h2>
-                <div class="input-field col s12 m4">
-                    <input type="text" name="city3" id="city3" required>
-                    <label for="city3">Plats:</label>
-                </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="latitude3" id="latitude3" step="0.000001" min="-90" max="90" required>
-                    <label for="latitude3">Latitud:</label>
-                </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="longitude3" id="longitude3" step="0.000001" min="-180" max="180" required>
-                    <label for="longitude3">Longitud:</label>
-                </div>
-            </div>
-            <div class="row">
-                <h2>Plats c</h2>
-                <div class="input-field col s12 m4">
-                    <input type="text" name="city4" id="city4" required>
-                    <label for="city4">Plats:</label>
-                </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="latitude4" id="latitude4" step="0.000001" min="-90" max="90" required>
-                    <label for="latitude4">Latitud:</label>
-                </div>
-                <div class="input-field col s12 m4">
-                    <input type="number" name="longitude4" id="longitude4" step="0.000001" min="-180" max="180" required>
-                    <label for="longitude4">Longitud:</label>
-                </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" name="continue" id="continue">Fortsätt<i class="material-icons right">arrow_right</i></button>
-        </form>
-        <!-- // Form -->
-    </div>
+                <button class="btn waves-effect waves-light" type="submit" name="continue" id="continue">Fortsätt<i class="material-icons right">arrow_right</i></button>
+            </form>
+            <!-- // Form -->
+        </div>
+    </main>
     <!-- Footer -->
     <footer class="page-footer indigo darken-4">
         <div class="footer-copyright indigo darken-3">

@@ -68,68 +68,70 @@
         </div>
     </nav>
     <!-- // Navbar -->
-    <div class="container">
-        <h1>Resultat:</h1>
-        <!-- Table -->
-        <table>
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Namn</th>
-                    <th>Latitud</th>
-                    <th>Longitud</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    foreach (get_all_named_destinations($journey_id) as $row) {
-                        echo "<tr>";
-                        echo "\n\t\t\t\t\t<td>".$row['id']."</td>";
-                        echo "\n\t\t\t\t\t<td>".$row['name']."</td>";
-                        echo "\n\t\t\t\t\t<td>".$row['latitude']."</td>";
-                        echo "\n\t\t\t\t\t<td>".$row['longitude']."</td>";
-                        echo "\n\t\t\t\t</tr>";
+    <main>
+        <div class="container">
+            <h1>Resultat:</h1>
+            <!-- Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Namn</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach (get_all_named_destinations($journey_id) as $row) {
+                            echo "<tr>";
+                            echo "\n\t\t\t\t\t<td>".$row['id']."</td>";
+                            echo "\n\t\t\t\t\t<td>".$row['name']."</td>";
+                            echo "\n\t\t\t\t\t<td>".$row['latitude']."</td>";
+                            echo "\n\t\t\t\t\t<td>".$row['longitude']."</td>";
+                            echo "\n\t\t\t\t</tr>";
+                        }
+                        echo "\n";
+                    ?>
+                </tbody>
+            </table>
+            <!-- // Table -->
+            <h2>Kortaste resväg:</h2>
+            <!-- Route -->
+            <?php
+                foreach ($keys as $key) {
+                    echo "\n\t\t<p>";
+                    foreach ($routes[$key] as $route) {
+                        echo get_destination_name($route)['name']." - ";
                     }
-                    echo "\n";
-                ?>
-            </tbody>
-        </table>
-        <!-- // Table -->
-        <h2>Kortaste resväg:</h2>
-        <!-- Route -->
-        <?php
-            foreach ($keys as $key) {
-                echo "\n\t\t<p>";
-                foreach ($routes[$key] as $route) {
-                    echo get_destination_name($route)['name']." - ";
+                    echo number_format(min($lengths), 2, ",", " ")." km</p>";
                 }
-                echo number_format(min($lengths), 2, ",", " ")." km</p>";
-            }
-        ?>
-        <!-- // Route -->
-        <h2>Sträckor</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Från</th>
-                    <th>Till</th>
-                    <th>Längd</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    foreach (get_all_to_from($journey_id) as $row) {
-                        echo "<tr>";
-                        echo "\n\t\t\t\t\t<td>".get_destination_name($row['from_id'])['name']."</td>";
-                        echo "\n\t\t\t\t\t<td>".get_destination_name($row['to_id'])['name']."</td>";
-                        echo "\n\t\t\t\t\t<td>".number_format($row['length'], 2, ",", " ")." km</td>";
-                        echo "\n\t\t\t\t</tr>";
-                    }
-                    echo "\n";
-                ?>
-            </tbody>
-        </table>
-    </div>
+            ?>
+            <!-- // Route -->
+            <h2>Sträckor</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Från</th>
+                        <th>Till</th>
+                        <th>Längd</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach (get_all_to_from($journey_id) as $row) {
+                            echo "<tr>";
+                            echo "\n\t\t\t\t\t<td>".get_destination_name($row['from_id'])['name']."</td>";
+                            echo "\n\t\t\t\t\t<td>".get_destination_name($row['to_id'])['name']."</td>";
+                            echo "\n\t\t\t\t\t<td>".number_format($row['length'], 2, ",", " ")." km</td>";
+                            echo "\n\t\t\t\t</tr>";
+                        }
+                        echo "\n";
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
     <!-- Footer -->
     <footer class="page-footer indigo darken-4">
         <div class="footer-copyright indigo darken-3">
