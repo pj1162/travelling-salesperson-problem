@@ -3,6 +3,8 @@ Detta är en databasbaserad applikation som används för att lösa en handelsre
 
 Ange platsernas namn och koordinater (enligt WGS84 systemet) i formuläret. Flygsträckorna mellan platserna räknas ut och används för att hitta en lösning.
 
+Alla beräkningar finns i filerna *calculate.php* och *output.php*.
+
 ## Upphovsman
 Patricia Johansson
 
