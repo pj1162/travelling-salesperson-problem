@@ -1,10 +1,9 @@
 <?php
-# Variabler
 if (strcmp($_SERVER['SERVER_NAME'], "localhost") == 0) {
-  $host = "localhost";                        // Den server där databasen ligger
-  $user = "root";                             // Ditt användarnamn
-  $pwd  = "root";                             // Ditt lösenord
-  $db   = "travelling_salesperson_problem";   // Databasen vi vill jobba mot
+  $host = "localhost";                        // Servern
+  $user = "root";                             // Användarnamn
+  $pwd  = "root";                             // Lösenord
+  $db   = "travelling_salesperson_problem";   // Databasen
 } else {
   $host = "";
   $user = "";
